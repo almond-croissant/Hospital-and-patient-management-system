@@ -1,0 +1,29 @@
+{
+  "name": "hospital-and-patient-management-system",
+  "version": "1.0.0",
+  "description": "A full-stack hospital management web app built for a DBMS Experiential Learning project. Patients book appointments, doctors record diagnoses and prescribe medicines, and admins manage the hospital. All data lives in PostgreSQL, and the project goes beyond basic CRUD by using transactions, triggers, views, a stored procedure and vector similarity search.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/almond-croissant/Hospital-and-patient-management-system.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/almond-croissant/Hospital-and-patient-management-system/issues"
+  },
+  "homepage": "https://github.com/almond-croissant/Hospital-and-patient-management-system#readme",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "jose": "^6.2.13",
+    "next": "^16.4.3",
+    "pg": "^8.23.1",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "zod": "^4.6.7"
+  }
+}
