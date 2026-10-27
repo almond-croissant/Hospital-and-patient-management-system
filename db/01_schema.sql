@@ -1,5 +1,6 @@
 -- PostgreSQL schema for the hospital and patient management system.
 -- PostgreSQL 13+ provides gen_random_uuid() natively.
+CREATE EXTENSION IF NOT EXISTS vector;
 
 CREATE TYPE user_role AS ENUM ('admin', 'doctor', 'patient');
 
@@ -64,6 +65,11 @@ CREATE TABLE CONSULTATION (
     notes           TEXT
 );
 
+CREATE TABLE CONSULTATION_EMBEDDING (
+    consultation_id UUID PRIMARY KEY REFERENCES CONSULTATION (consultation_id) ON DELETE CASCADE,
+    embedding       VECTOR(256) NOT NULL
+);
+
 CREATE TABLE PRESCRIPTION (
     prescription_id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     consultation_id UUID NOT NULL REFERENCES CONSULTATION (consultation_id) ON DELETE CASCADE,
@@ -88,3 +94,4 @@ CREATE TABLE PRESCRIPTION_AUDIT (
     payload         JSONB,
     changed_at      TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
+
