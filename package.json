@@ -1,10 +1,18 @@
 {
   "name": "hospital-and-patient-management-system",
   "version": "1.0.0",
+  "type": "module",
   "description": "A full-stack hospital management web app built for a DBMS Experiential Learning project. Patients book appointments, doctors record diagnoses and prescribe medicines, and admins manage the hospital. All data lives in PostgreSQL, and the project goes beyond basic CRUD by using transactions, triggers, views, a stored procedure and vector similarity search.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "next dev",
+    "build": "next build --webpack",
+    "start": "next start",
+    "test": "node --test",
+    "admin:create": "node scripts/create-admin.js",
+    "db:setup": "node scripts/db-setup.js",
+    "db:seed": "node scripts/db-seed.js",
+    "db:check": "node scripts/db-check.js"
   },
   "repository": {
     "type": "git",
